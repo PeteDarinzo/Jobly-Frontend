@@ -1,23 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import Routes from "./Routes"
+import Navbar from './Navbar';
+import React, { useState, useEffect } from "react";
+import JoblyApi from "./Api.js";
+
 
 function App() {
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [companies, setCompanies] = useState([]);
+  const [jobs, setJobs] = useState([]);
+
+  /** On mount, request all companies from JoblyApi */
+  useEffect(() => {
+    async function getData() {
+      let companies = await JoblyApi.getAllCompanies();
+      let jobs = await JoblyApi.getAllJobs();
+      setCompanies(companies);
+      setJobs(jobs);
+      setIsLoading(false);
+    }
+    getData();
+  }, []);
+
+  if (isLoading) {
+    return (<p>Loading...</p>);
+  }
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes companies={companies} jobs={jobs} />
     </div>
   );
 }
