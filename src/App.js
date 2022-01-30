@@ -1,6 +1,6 @@
 import './App.css';
 import Routes from "./Routes"
-import Navbar from './Navbar';
+import NavBar from './NavBar';
 import React, { useState, useEffect } from "react";
 import JoblyApi from "./Api.js";
 
@@ -10,6 +10,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [companies, setCompanies] = useState([]);
   const [jobs, setJobs] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [userToken, setUserToken] = useState("");
 
   /** On mount, request all companies from JoblyApi */
   useEffect(() => {
@@ -23,16 +25,46 @@ function App() {
     getData();
   }, []);
 
+
+  useEffect(() => {
+    setLoggedIn(!loggedIn);
+  }, [userToken]);
+
+
+  async function login(userData) {
+    const token = await JoblyApi.getToken(userData);
+    console.log(token);
+    setUserToken(token);
+  }
+
+  function logout() {
+    console.log(loggedIn);
+    console.log(userToken);
+    setLoggedIn(false);
+    setUserToken("");
+  }
+
+  async function register(userData) {
+    const token = await JoblyApi.register(userData);
+    console.log(token);
+    setUserToken(token);
+  }
+
+
   if (isLoading) {
     return (<p>Loading...</p>);
   }
 
-
-
   return (
     <div className="App">
-      <Navbar />
-      <Routes companies={companies} jobs={jobs} />
+      <NavBar loggedIn={loggedIn} />
+      <Routes
+        companies={companies}
+        jobs={jobs}
+        register={register}
+        login={login}
+        logout={logout}
+      />
     </div>
   );
 }

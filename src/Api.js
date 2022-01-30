@@ -57,14 +57,30 @@ class JoblyApi {
   }
 
 
+  static async register(userData) {
+    let res = await this.request("auth/register", userData, "post");
+    const token = res.token;
+    JoblyApi.token = token;
+    return token;
+  }
 
-  // obviously, you'll add a lot here ...
+
+  static async getToken(userData) {
+    let res = await this.request("auth/token", userData, "post");
+    const token = res.token;
+    JoblyApi.token = token;
+    return token;
+  }
+
 }
 
 // for now, put token ("testuser" / "password" on class)
-JoblyApi.token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZ" +
-  "SI6InRlc3R1c2VyIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTU5ODE1OTI1OX0." +
-  "FtrMwBQwe6Ue-glIFgz_Nf8XxRT2YecFCiSpYL0fCXc";
+// JoblyApi.token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZ" +
+//   "SI6InRlc3R1c2VyIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTU5ODE1OTI1OX0." +
+//   "FtrMwBQwe6Ue-glIFgz_Nf8XxRT2YecFCiSpYL0fCXc";
+
+// toast
+// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvYXN0IiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY0MzUxNzE3M30.stx2uFSjrheeX0O3yZCnGuvL-gQCfPNiyNKB17uvNaY
 
 
 export default JoblyApi;

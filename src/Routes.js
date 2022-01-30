@@ -7,8 +7,9 @@ import SignupForm from "./SignupForm";
 import LoginForm from "./LoginForm";
 import CompanyDetail from "./CompanyDetail";
 import ProfileForm from "./ProfileForm";
+import Logout from "./Logout";
 
-const Routes = ({ companies, jobs }) => {
+const Routes = ({ companies, jobs, register, login, logout }) => {
 
   return (
     <Switch>
@@ -27,11 +28,14 @@ const Routes = ({ companies, jobs }) => {
       <Route exact path="/profile">
         <ProfileForm />
       </Route>
-      <Route exact path="/signup">
-        <SignupForm />
+      <Route exact path="/signup" >
+        <SignupForm register={register} />
       </Route>
       <Route exact path="/login">
-        <LoginForm />
+        <LoginForm login={login} />
+      </Route>
+      <Route exact path="/logout">
+        <Logout logout={logout} />
       </Route>
       <Redirect to="/" />
     </Switch>

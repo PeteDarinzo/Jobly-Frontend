@@ -1,11 +1,11 @@
 import React from "react";
-import "./CompanyCard.css";
+import "./Card.css";
 
 
 const CompanyCard = ({ name, description }) => {
 
   return (
-    <div className="CompanyCard">
+    <div className="CompanyCard shadow p-3">
       <h2>{name}</h2>
       <p>{description}</p>
     </div>

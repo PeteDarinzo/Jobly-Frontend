@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CompanyList from "./CompanyList";
+import { Col, Button, Form, FormGroup, Input, Label } from "reactstrap";
 
 const CompanySearchForm = ({ filter }) => {
 
@@ -17,22 +17,38 @@ const CompanySearchForm = ({ filter }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>
-        </label>
-        <input
+
+    <Form onSubmit={handleSubmit} inline>
+      <FormGroup row>
+        <Label for="search">Filter Companies</Label>
+        <Input
+          type="text"
           id="search"
           name="search"
           value={formData}
-          onChange={handleChange}
-        />
-      </div>
-      <button
-        type="submit">
-        Search
-      </button>
-    </form>
+          onChange={handleChange}>
+        </Input>
+      </FormGroup>
+      <Button type="submit">Search Companies</Button>
+    </Form>
+
+    // <form onSubmit={handleSubmit}>
+    //   <div>
+    //     <label htmlFor="search">
+    //       Filter
+    //     </label>
+    //     <input
+    //       id="search"
+    //       name="search"
+    //       value={formData}
+    //       onChange={handleChange}
+    //     />
+    //   </div>
+    //   <Button
+    //     type="submit">
+    //     Search
+    //   </Button>
+    // </form>
   );
 }
 

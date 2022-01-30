@@ -1,9 +1,10 @@
 import React from "react";
+import "./Card.css";
 
 const JobCard = ({ title, salary, equity, companyName }) => {
 
   return (
-    <div className="CompanyCard">
+    <div className="CompanyCard shadow p-3">
       <h2>{title}</h2>
       <p>{companyName}</p>
       <p>Salary: {salary}</p>

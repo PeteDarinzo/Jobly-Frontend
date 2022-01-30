@@ -13,11 +13,12 @@ const CompanyDetail = ({ companies, jobs }) => {
   console.log("openings: ", openings);
 
   return (
-    <div className="CompanyDetail">
-      <h1>{company.name}</h1>
-      <h2>{company.description}</h2>
+    <div>
+      <div className="CompanyDetail-title">
+        <h1>{company.name}</h1>
+        <h2>{company.description}</h2>
+      </div>
       <div>
-        <h3>the jobs should be here</h3>
         {openings.map(job => (
           <JobCard
             title={job.title}

@@ -1,7 +1,8 @@
 
-.CompanyDetail {
+.CompanyDetail-title {
   position: relative;
-  left: 5%;
+  left: 15%;
   text-align: left;
-  width: 75%;
+  width: 65%;
+  margin: 45px;
 }
