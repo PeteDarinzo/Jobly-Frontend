@@ -72,6 +72,11 @@ class JoblyApi {
     return token;
   }
 
+  static async getCredentials(username) {
+    let res = await this.request(`users/${username}`);
+    return res.user;
+  }
+
 }
 
 // for now, put token ("testuser" / "password" on class)
@@ -82,5 +87,6 @@ class JoblyApi {
 // toast
 // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvYXN0IiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY0MzUxNzE3M30.stx2uFSjrheeX0O3yZCnGuvL-gQCfPNiyNKB17uvNaY
 
+// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvYXN0IiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY0MzUxODc0OX0.3ykkfgN213gLOrVg6BZZaYeyr9LJuIYDgRRWGYDFA64
 
 export default JoblyApi;

@@ -9,7 +9,7 @@ import CompanyDetail from "./CompanyDetail";
 import ProfileForm from "./ProfileForm";
 import Logout from "./Logout";
 
-const Routes = ({ companies, jobs, register, login, logout }) => {
+const Routes = ({ companies, jobs, register, login, logout, loggedIn }) => {
 
   return (
     <Switch>
@@ -17,13 +17,19 @@ const Routes = ({ companies, jobs, register, login, logout }) => {
         <Home />
       </Route>
       <Route exact path="/companies">
-        <CompanyList companies={companies} />
+        {loggedIn
+          ? <CompanyList companies={companies} />
+          : <Redirect to="/login" />}
       </Route>
       <Route exact path="/companies/:handle">
-        <CompanyDetail companies={companies} jobs={jobs} />
+        {loggedIn
+          ? <CompanyDetail companies={companies} jobs={jobs} />
+          : <Redirect to="/login" />}
       </Route>
       <Route exact path="/jobs">
-        <JobList jobs={jobs} />
+        {loggedIn
+          ? <JobList jobs={jobs} />
+          : <Redirect to="/login" />}
       </Route>
       <Route exact path="/profile">
         <ProfileForm />
