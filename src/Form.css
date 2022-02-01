@@ -1,0 +1,23 @@
+
+.Form {
+  /* width: 100%; */
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: whitesmoke;
+  padding: 2%;
+  margin-top: 45px;
+}
+
+.Form h1 {
+  margin-bottom: 35px;
+}
+
+.Form label {
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+}
+
+.Form p {
+  text-align: left;
+}

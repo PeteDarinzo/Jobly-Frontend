@@ -8,8 +8,8 @@ const NavBar = ({ loggedIn }) => {
   return (
     <div>
       <Navbar className="py-3">
-        <NavLink exact to="/">
-          Jobly
+        <NavLink exact to="/" className="Nav-logo">
+          Jobly <i className="fas fa-suitcase"></i>
         </NavLink>
         {loggedIn && (
           <Nav>

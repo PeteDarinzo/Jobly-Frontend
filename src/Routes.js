@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useReducer } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import Home from "./Home";
+import HomeAnon from "./HomeAnon";
 import CompanyList from "./CompanyList";
 import JobList from "./JobList";
 import SignupForm from "./SignupForm";
@@ -9,12 +10,14 @@ import CompanyDetail from "./CompanyDetail";
 import ProfileForm from "./ProfileForm";
 import Logout from "./Logout";
 
-const Routes = ({ companies, jobs, register, login, logout, loggedIn }) => {
+const Routes = ({ companies, jobs, register, login, logout, updateUser, loggedIn, userCredentials }) => {
 
   return (
     <Switch>
       <Route exact path="/">
-        <Home />
+        {loggedIn
+          ? <Home username={userCredentials.username} />
+          : <HomeAnon />}
       </Route>
       <Route exact path="/companies">
         {loggedIn
@@ -32,7 +35,13 @@ const Routes = ({ companies, jobs, register, login, logout, loggedIn }) => {
           : <Redirect to="/login" />}
       </Route>
       <Route exact path="/profile">
-        <ProfileForm />
+
+        <ProfileForm
+          updateUser={updateUser}
+          username={userCredentials.username}
+          firstName={userCredentials.firstName}
+          lastName={userCredentials.lastName}
+          email={userCredentials.email} />
       </Route>
       <Route exact path="/signup" >
         <SignupForm register={register} />

@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import "./Form.css"
 
-const ProfileForm = () => {
+const ProfileForm = ({ updateUser, username, firstName, lastName, email }) => {
 
   const initialState = {
-    username: "",
-    password: "",
-    firstName: "",
-    lastName: "",
-    email: ""
+    username: username,
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    password: ""
   }
 
   const [formData, setFormData] = useState(initialState);
@@ -23,35 +24,19 @@ const ProfileForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    updateUser(formData);
     setFormData(initialState);
     history.push("/");
   }
 
   return (
-    <div>
-      <h1>Sign Up</h1>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} className="Form">
+      <h1>Edit Profile</h1>
         <FormGroup>
           <Label for="username">Username</Label>
-          <Input
-            type="text"
-            name="username"
-            id="username"
-            placeholder="username"
-            onChange={handleChange}
-            required
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="examplePassword">Password</Label>
-          <Input
-            type="password"
-            name="password"
-            id="examplePassword"
-            placeholder="password"
-            onChange={handleChange}
-            required
-          />
+          <p id="username">
+            {username}
+          </p>
         </FormGroup>
         <FormGroup>
           <Label for="firstName">First Name</Label>
@@ -59,7 +44,7 @@ const ProfileForm = () => {
             type="text"
             name="firstName"
             id="firstName"
-            placeholder="first name"
+            value={formData.firstName}
             onChange={handleChange}
             required
           />
@@ -70,25 +55,35 @@ const ProfileForm = () => {
             type="text"
             name="lastName"
             id="lastName"
-            placeholder="last name"
+            value={formData.lastName}
             onChange={handleChange}
             required
           />
         </FormGroup>
         <FormGroup>
-          <Label for="exampleEmail">Email</Label>
+          <Label for="email">Email</Label>
           <Input
             type="email"
             name="email"
-            id="exampleEmail"
-            placeholder="email"
+            id="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="password">Provide password to confirm changes</Label>
+          <Input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="password"
             onChange={handleChange}
             required
           />
         </FormGroup>
         <Button>Submit</Button>
       </Form>
-    </div>
   );
 }
 

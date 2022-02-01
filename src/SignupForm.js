@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-
+import "./Form.css";
 
 
 
@@ -32,9 +32,9 @@ const SignupForm = ({ register }) => {
   }
 
   return (
-    <div>
+      <Form onSubmit={handleSubmit} className="Form">
       <h1>Sign Up</h1>
-      <Form onSubmit={handleSubmit}>
+
         <FormGroup>
           <Label for="username">Username</Label>
           <Input
@@ -92,8 +92,6 @@ const SignupForm = ({ register }) => {
         </FormGroup>
         <Button>Submit</Button>
       </Form>
-    </div>
-
   );
 }
 

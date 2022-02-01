@@ -6,7 +6,7 @@ const Logout = ({ logout }) => {
   logout();
 
   return (
-    <Redirect to="/" />
+    <Redirect to="/login" />
   );
 }
 

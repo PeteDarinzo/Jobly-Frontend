@@ -5,7 +5,7 @@ import "./CompanyList.css";
 import CompanySearchForm from "./CompanySearchForm";
 import { v4 as uuid } from "uuid";
 import JoblyApi from "./Api";
-
+import "./Form.css";
 
 const CompanyList = ({ companies }) => {
 
@@ -22,6 +22,9 @@ const CompanyList = ({ companies }) => {
 
   return (
     <div>
+      <div>
+        
+      </div>
       <h1>All Companies:</h1>
       <CompanySearchForm filter={filterCompanies} />
       {companyList.map(company => (
