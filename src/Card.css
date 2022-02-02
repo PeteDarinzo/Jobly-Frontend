@@ -1,13 +1,11 @@
 
-.CompanyCard {
+.Card {
   text-align: left;
   margin: 0 auto 25px;
   text-decoration: none;
   background-color: white;
-  width: 45%;
 }
 
-.CompanyCard h2 {
+.Card h2 {
   color: darkblue;
 }
-

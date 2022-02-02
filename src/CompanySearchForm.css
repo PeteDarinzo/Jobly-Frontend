@@ -1,32 +1,15 @@
 
 
 .CompanySearchForm {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   background-color: whitesmoke;
-  padding: 2%;
-  margin-top: 45px;
+  margin-bottom: 45px;
 }
 
-.CompanySearchForm label {
-  display: inline-block;
-  width: 100px;
-  margin-right: 10px;
-}
+ .CompanySearchForm label {
+  position: relative;
+  text-align: left;
+  font-weight: bold;
+} 
 
-.CompanySearchForm input {
-  display: inline-block;
-  width: 100px;
-  margin-right: 10px;
-}
-
-.CompanySearchForm button {
-  display: inline-block;
-  background-color: aquamarine;
-  width: 125px;
-  height: 75px;
-  border: solid 3px aqua;
-  border-radius: 15%;
-  margin-top: 25px;
-  font-size: 1.3rem;
-}

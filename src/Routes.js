@@ -10,7 +10,7 @@ import CompanyDetail from "./CompanyDetail";
 import ProfileForm from "./ProfileForm";
 import Logout from "./Logout";
 
-const Routes = ({ companies, jobs, register, login, logout, updateUser, loggedIn, userCredentials }) => {
+const Routes = ({ companies, jobs, register, login, logout, updateUser, apply, applications, loggedIn, userCredentials }) => {
 
   return (
     <Switch>
@@ -26,16 +26,15 @@ const Routes = ({ companies, jobs, register, login, logout, updateUser, loggedIn
       </Route>
       <Route exact path="/companies/:handle">
         {loggedIn
-          ? <CompanyDetail companies={companies} jobs={jobs} />
+          ? <CompanyDetail companies={companies} jobs={jobs} apply={apply} applications={applications} />
           : <Redirect to="/login" />}
       </Route>
       <Route exact path="/jobs">
         {loggedIn
-          ? <JobList jobs={jobs} />
+          ? <JobList jobs={jobs} apply={apply} applications={applications} />
           : <Redirect to="/login" />}
       </Route>
       <Route exact path="/profile">
-
         <ProfileForm
           updateUser={updateUser}
           username={userCredentials.username}

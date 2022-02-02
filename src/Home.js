@@ -12,17 +12,11 @@ const Home = ({ username }) => {
           View Jobs
         </Button>
       </Link>
-      {/* <Button color="primary" size="lg" className="m-3">
-        <Link to="/jobs" className="HomeLink" style={{ textDecoration: "none", color: "white" }}>View Jobs</Link>
-      </Button> */}
       <Link to="/companies">
         <Button color="primary" size="lg" className="m-3">
           View Companies
         </Button>
       </Link>
-      {/* <Button color="primary" size="lg" className="m-3">
-        <Link to="/companies" style={{ textDecoration: "none", color: "white" }}>View Companies</Link>
-      </Button> */}
     </div >
   );
 }

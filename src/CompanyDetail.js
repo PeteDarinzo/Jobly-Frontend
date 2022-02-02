@@ -2,30 +2,32 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import JobCard from "./JobCard";
 import "./CompanyDetail.css";
-import { v4 as uuid } from "uuid";
 
-const CompanyDetail = ({ companies, jobs }) => {
+const CompanyDetail = ({ companies, jobs, apply, applications }) => {
 
   const { handle } = useParams();
 
   const company = companies.find(company => company.handle === handle);
   const openings = jobs.filter(job => job.companyName === company.name);
-  console.log("openings: ", openings);
 
   return (
-    <div>
-      <div className="CompanyDetail-title">
+    <div className="CompanyDetail">
+      <div className="CompanyDetail-title shadow">
         <h1>{company.name}</h1>
         <h2>{company.description}</h2>
       </div>
-      <div>
+      <div className="CompanyDetail-list">
+        <h3>Open Positions:</h3>
         {openings.map(job => (
           <JobCard
+            id={job.id}
             title={job.title}
             companyName={job.companyName}
             salary={job.salary}
             equity={job.equity}
-            key={uuid()}
+            apply={apply}
+            applied={applications.indexOf(job.id) >= 0}
+            key={job.id}
           />
         ))}
       </div>

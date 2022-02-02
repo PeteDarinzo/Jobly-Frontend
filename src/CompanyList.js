@@ -3,7 +3,6 @@ import CompanyCard from "./CompanyCard";
 import { Link } from "react-router-dom";
 import "./CompanyList.css";
 import CompanySearchForm from "./CompanySearchForm";
-import { v4 as uuid } from "uuid";
 import JoblyApi from "./Api";
 import "./Form.css";
 
@@ -21,18 +20,16 @@ const CompanyList = ({ companies }) => {
   }
 
   return (
-    <div>
-      <div>
-        
-      </div>
+    <div className="CompanyList">
       <h1>All Companies:</h1>
       <CompanySearchForm filter={filterCompanies} />
-      {companyList.map(company => (
-        <Link to={`companies/${company.handle}`} className="CompanyListLink" key={uuid()}>
-          <CompanyCard name={company.name} description={company.description} />
-        </Link>
-      ))
-      }
+      <div className="CompanyList-list">
+        {companyList.map(company => (
+          <Link to={`companies/${company.handle}`} className="CompanyList-link" key={company.handle}>
+            <CompanyCard name={company.name} description={company.description} />
+          </Link>
+        ))}
+      </div>
     </div >
   );
 }

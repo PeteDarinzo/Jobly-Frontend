@@ -5,7 +5,7 @@ import "./Card.css";
 const CompanyCard = ({ name, description }) => {
 
   return (
-    <div className="CompanyCard shadow p-3">
+    <div className="Card shadow p-3">
       <h2>{name}</h2>
       <p>{description}</p>
     </div>

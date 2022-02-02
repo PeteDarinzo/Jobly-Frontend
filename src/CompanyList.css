@@ -1,4 +1,17 @@
 
-.CompanyListLink {
+
+.CompanyList {
+  position: relative;
+  top: 25px;
+  width: 100%;
+}
+
+.CompanyList-link {
   text-decoration: none;
+  color: black;
+}
+
+.CompanyList > div {
+  width: 50%;
+  margin: 50px auto 0 auto;
 }

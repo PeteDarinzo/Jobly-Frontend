@@ -13,17 +13,11 @@ const HomeAnon = () => {
           Sign Up
         </Button>
       </Link>
-      {/* <Button color="primary" size="lg" className="m-3">
-        <Link to="/jobs" className="HomeLink" style={{ textDecoration: "none", color: "white" }}>View Jobs</Link>
-      </Button> */}
       <Link to="/login">
         <Button color="primary" size="lg" className="m-3">
           Log in
         </Button>
       </Link>
-      {/* <Button color="primary" size="lg" className="m-3">
-        <Link to="/companies" style={{ textDecoration: "none", color: "white" }}>View Companies</Link>
-      </Button> */}
       <h2 className="Home-right">...just a click away.</h2>
     </div >
   );

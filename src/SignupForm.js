@@ -32,7 +32,7 @@ const SignupForm = ({ register }) => {
   }
 
   return (
-      <Form onSubmit={handleSubmit} className="Form">
+      <Form onSubmit={handleSubmit} className="Form shadow">
       <h1>Sign Up</h1>
 
         <FormGroup>
@@ -90,7 +90,7 @@ const SignupForm = ({ register }) => {
             required
           />
         </FormGroup>
-        <Button>Submit</Button>
+        <Button color="primary" className="btn-lg">Submit</Button>
       </Form>
   );
 }

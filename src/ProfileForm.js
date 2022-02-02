@@ -30,7 +30,7 @@ const ProfileForm = ({ updateUser, username, firstName, lastName, email }) => {
   }
 
   return (
-      <Form onSubmit={handleSubmit} className="Form">
+      <Form onSubmit={handleSubmit} className="Form shadow">
       <h1>Edit Profile</h1>
         <FormGroup>
           <Label for="username">Username</Label>
@@ -82,7 +82,7 @@ const ProfileForm = ({ updateUser, username, firstName, lastName, email }) => {
             required
           />
         </FormGroup>
-        <Button>Submit</Button>
+        <Button color="primary" className="btn-lg">Submit</Button>
       </Form>
   );
 }

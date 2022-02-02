@@ -28,7 +28,7 @@ const LoginForm = ({ login }) => {
 
 
   return (
-      <Form onSubmit={handleSubmit} className="Form">
+      <Form onSubmit={handleSubmit} className="Form shadow">
         <h1>Log In</h1>
         <FormGroup>
           <Label for="username">Username</Label>
@@ -50,7 +50,7 @@ const LoginForm = ({ login }) => {
             onChange={handleChange}
           />
         </FormGroup>
-        <Button>Submit</Button>
+        <Button color="primary" className="btn-lg">Submit</Button>
       </Form>
   );
 }

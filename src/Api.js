@@ -64,7 +64,6 @@ class JoblyApi {
     return token;
   }
 
-
   static async getToken(userData) {
     try {
       let res = await this.request("auth/token", userData, "post");
@@ -84,6 +83,11 @@ class JoblyApi {
   static async updateCredentials(username, userData) {
     let res = await this.request(`users/${username}`, userData, "patch")
     return res.user;
+  }
+
+  static async apply(username, id) {
+    let res = await this.request(`users/${username}/jobs/${id}`, {}, "post");
+    return res.applied;
   }
 
 }
