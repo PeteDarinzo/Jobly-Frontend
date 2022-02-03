@@ -6,7 +6,7 @@ import CompanySearchForm from "./CompanySearchForm";
 import JoblyApi from "./Api";
 import "./Form.css";
 
-const CompanyList = ({ companies }) => {
+const CompanyList = ({ companies, filter }) => {
 
   const [companyList, setCompanyList] = useState(companies)
 
@@ -14,15 +14,15 @@ const CompanyList = ({ companies }) => {
    *  getAllCompanies takes an object and sets it as data in the request
    *  "name" is the filter to search companies by name
    */
-  async function filterCompanies(term) {
-    const res = await JoblyApi.getAllCompanies({ name: term });
-    setCompanyList(res)
-  }
+  // async function filterCompanies(term) {
+  //   const res = await JoblyApi.getAllCompanies({ name: term });
+  //   setCompanyList(res)
+  // }
 
   return (
     <div className="CompanyList">
       <h1>All Companies:</h1>
-      <CompanySearchForm filter={filterCompanies} />
+      <CompanySearchForm filter={filter} />
       <div className="CompanyList-list">
         {companyList.map(company => (
           <Link to={`companies/${company.handle}`} className="CompanyList-link" key={company.handle}>

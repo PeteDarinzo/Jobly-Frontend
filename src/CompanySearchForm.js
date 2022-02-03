@@ -13,6 +13,7 @@ const CompanySearchForm = ({ filter }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormData("");
     filter(formData);
   }
 

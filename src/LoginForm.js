@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Alert } from 'reactstrap';
 import "./Form.css"
 
-const LoginForm = ({ login }) => {
+const LoginForm = ({ login, error }) => {
 
   const initialState = {
     username: "",
@@ -11,7 +10,6 @@ const LoginForm = ({ login }) => {
   }
 
   const [formData, setFormData] = useState(initialState);
-  const history = useHistory();
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -23,13 +21,15 @@ const LoginForm = ({ login }) => {
     e.preventDefault();
     login(formData);
     setFormData(initialState);
-    history.push("/");
   }
 
-
   return (
+    <div>
       <Form onSubmit={handleSubmit} className="Form shadow">
         <h1>Log In</h1>
+        {error && <Alert color="danger">
+          {error}
+        </Alert>}
         <FormGroup>
           <Label for="username">Username</Label>
           <Input
@@ -52,6 +52,7 @@ const LoginForm = ({ login }) => {
         </FormGroup>
         <Button color="primary" className="btn-lg">Submit</Button>
       </Form>
+    </div>
   );
 }
 

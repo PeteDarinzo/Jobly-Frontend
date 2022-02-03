@@ -65,14 +65,10 @@ class JoblyApi {
   }
 
   static async getToken(userData) {
-    try {
-      let res = await this.request("auth/token", userData, "post");
-      const token = res.token;
-      JoblyApi.token = token;
-      return token;
-    } catch {
-      console.log("you messed up");
-    }
+    let res = await this.request("auth/token", userData, "post");
+    const token = res.token;
+    JoblyApi.token = token;
+    return token;
   }
 
   static async getCredentials(username) {

@@ -10,7 +10,7 @@ import CompanyDetail from "./CompanyDetail";
 import ProfileForm from "./ProfileForm";
 import Logout from "./Logout";
 
-const Routes = ({ companies, jobs, register, login, logout, updateUser, apply, applications, loggedIn, userCredentials }) => {
+const Routes = ({ companies, jobs, register, login, logout, updateUser, apply, filter, applications, loggedIn, userCredentials, loginError, signupError, profileError }) => {
 
   return (
     <Switch>
@@ -21,7 +21,7 @@ const Routes = ({ companies, jobs, register, login, logout, updateUser, apply, a
       </Route>
       <Route exact path="/companies">
         {loggedIn
-          ? <CompanyList companies={companies} />
+          ? <CompanyList companies={companies} filter={filter} />
           : <Redirect to="/login" />}
       </Route>
       <Route exact path="/companies/:handle">
@@ -40,13 +40,14 @@ const Routes = ({ companies, jobs, register, login, logout, updateUser, apply, a
           username={userCredentials.username}
           firstName={userCredentials.firstName}
           lastName={userCredentials.lastName}
-          email={userCredentials.email} />
+          email={userCredentials.email}
+          error={profileError} />
       </Route>
       <Route exact path="/signup" >
-        <SignupForm register={register} />
+        <SignupForm register={register} error={signupError} />
       </Route>
       <Route exact path="/login">
-        <LoginForm login={login} />
+        <LoginForm login={login} error={loginError} />
       </Route>
       <Route exact path="/logout">
         <Logout logout={logout} />
