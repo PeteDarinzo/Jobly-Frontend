@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import JobCard from "./JobCard";
 import "./CompanyDetail.css";
 
+
+/** Generic component to display a company, and its list of open jobs */
+
 const CompanyDetail = ({ companies, jobs, apply, applications }) => {
 
   const { handle } = useParams();
@@ -33,7 +36,6 @@ const CompanyDetail = ({ companies, jobs, apply, applications }) => {
       </div>
     </div>
   );
-
 }
 
 export default CompanyDetail;

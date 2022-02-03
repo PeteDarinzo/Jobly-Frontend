@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 import { Button } from "reactstrap"
 
+
+/** Landing page for logged out users */
+
 const HomeAnon = () => {
   return (
     <div className="Home shadow-lg">

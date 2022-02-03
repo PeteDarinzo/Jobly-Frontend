@@ -3,6 +3,8 @@ import JobCard from "./JobCard";
 import "./JobList.css";
 
 
+/** Generic component to display a job cards */
+
 const JobList = ({ jobs, apply, applications }) => {
 
   return (

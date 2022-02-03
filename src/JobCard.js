@@ -3,6 +3,8 @@ import "./Card.css";
 import { Button } from "reactstrap";
 
 
+/** Generic component to display a job's information */
+
 const JobCard = ({ id, title, salary, equity, companyName, apply, applied }) => {
 
 

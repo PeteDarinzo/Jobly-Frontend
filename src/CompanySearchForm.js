@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import "./Form.css";
 
+
+/** A form to apply a filter to the company list */
+
 const CompanySearchForm = ({ filter }) => {
 
   const [formData, setFormData] = useState("");
@@ -28,6 +31,7 @@ const CompanySearchForm = ({ filter }) => {
           value={formData}
           placeholder="Enter search term"
           onChange={handleChange}
+          required
         />
       </FormGroup>
       <Button color="primary">Search Companies</Button>

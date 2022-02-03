@@ -51,11 +51,13 @@ class JoblyApi {
   }
 
 
+  /** Get a list of all jobs in the database */
   static async getAllJobs() {
     let res = await this.request("jobs/");
     return res.jobs;
   }
 
+  /** Register a new user */
 
   static async register(userData) {
     let res = await this.request("auth/register", userData, "post");
@@ -64,6 +66,8 @@ class JoblyApi {
     return token;
   }
 
+  /** Get a token for an existing user */
+
   static async getToken(userData) {
     let res = await this.request("auth/token", userData, "post");
     const token = res.token;
@@ -71,15 +75,21 @@ class JoblyApi {
     return token;
   }
 
+  /** Get an existing user's credentials */
+
   static async getCredentials(username) {
     let res = await this.request(`users/${username}`);
     return res.user;
   }
 
+  /** Update an existing user's credentials  */
+
   static async updateCredentials(username, userData) {
     let res = await this.request(`users/${username}`, userData, "patch")
     return res.user;
   }
+
+  /** Apply to a job */
 
   static async apply(username, id) {
     let res = await this.request(`users/${username}/jobs/${id}`, {}, "post");
@@ -87,15 +97,5 @@ class JoblyApi {
   }
 
 }
-
-// for now, put token ("testuser" / "password" on class)
-// JoblyApi.token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZ" +
-//   "SI6InRlc3R1c2VyIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTU5ODE1OTI1OX0." +
-//   "FtrMwBQwe6Ue-glIFgz_Nf8XxRT2YecFCiSpYL0fCXc";
-
-// toast
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvYXN0IiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY0MzUxNzE3M30.stx2uFSjrheeX0O3yZCnGuvL-gQCfPNiyNKB17uvNaY
-
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvYXN0IiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY0MzUxODc0OX0.3ykkfgN213gLOrVg6BZZaYeyr9LJuIYDgRRWGYDFA64
 
 export default JoblyApi;

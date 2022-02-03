@@ -2,6 +2,8 @@ import React from "react";
 import "./Card.css";
 
 
+/** Generic component to display a single company */
+
 const CompanyCard = ({ name, description }) => {
 
   return (

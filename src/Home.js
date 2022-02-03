@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 import { Button } from "reactstrap"
 
+
+/** Home page for logged in users */
+
 const Home = ({ username }) => {
   return (
     <div className="Home shadow-lg">
