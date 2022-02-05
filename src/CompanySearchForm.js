@@ -5,7 +5,7 @@ import "./Form.css";
 
 /** A form to apply a filter to the company list */
 
-const CompanySearchForm = ({ filter }) => {
+const CompanySearchForm = ({ filter, clearFilter }) => {
 
   const [formData, setFormData] = useState("");
 
@@ -16,12 +16,17 @@ const CompanySearchForm = ({ filter }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormData("");
+    console.log(formData);
     filter(formData);
   }
 
+  const handleClear = (e) => {
+    e.preventDefault();
+    clearFilter();
+  }
+
   return (
-    <Form onSubmit={handleSubmit} className="Form shadow">
+    <Form className="Form shadow">
       <FormGroup>
         <Label for="search">Search Companies</Label>
         <Input
@@ -34,7 +39,10 @@ const CompanySearchForm = ({ filter }) => {
           required
         />
       </FormGroup>
-      <Button color="primary">Search Companies</Button>
+      <div>
+        <Button onClick={handleSubmit} color="primary" className="m-1">Filter Companies</Button>
+        <Button onClick={handleClear} color="secondary" className="m-1">Clear Filters</Button>
+      </div>
     </Form>
   );
 }

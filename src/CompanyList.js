@@ -8,12 +8,12 @@ import "./Form.css";
 
 /** A component to render a list of company cards  */
 
-const CompanyList = ({ companies, filter }) => {
+const CompanyList = ({ companies, filter, clearFilter }) => {
 
   return (
     <div className="CompanyList">
       <h1>All Companies:</h1>
-      <CompanySearchForm filter={filter} />
+      <CompanySearchForm filter={filter} clearFilter={clearFilter} />
       <div className="CompanyList-list">
         {companies.map(company => (
           <Link to={`companies/${company.handle}`} className="CompanyList-link" key={company.handle}>

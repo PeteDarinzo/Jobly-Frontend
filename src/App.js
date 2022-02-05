@@ -125,9 +125,6 @@ function App() {
   function logout() {
     localStorage.removeItem("joblyToken");
     setUserToken("");
-    return (
-      <Redirect to="/login" />
-    );
   }
 
   /** 
@@ -143,17 +140,23 @@ function App() {
       delete userData.username;
       delete userData.password; // Do not send password to the server
       await JoblyApi.updateCredentials(username, userData);
-      setUserToken(token); 
+      setUserToken(token);
       history.push("/");
     } catch (err) {
       setProfileError(err[0]);
     }
   }
 
-  /** Post the job id to the JoblyApi to apply */
+  /** 
+   * Post the job id and applying username to the JoblyApi to apply
+   * Next, request the usercredentials to get the updated application list
+   */
 
   async function apply(id) {
     await JoblyApi.apply(userCredentials.username, id);
+
+    const credentials = await JoblyApi.getCredentials(userCredentials.username);
+    setUserCredentials(credentials);
   }
 
   /** 
@@ -168,24 +171,32 @@ function App() {
     setCompanies(searchRes);
   }
 
+  /** Clear company filter */
+
+  async function clearFilter() {
+    setIsLoading(true);
+    const searchRes = await JoblyApi.getAllCompanies();
+    setCompanies(searchRes);
+  }
+
   /** During times of data retrieval, just render a loading message */
-  
+
   if (isLoading) {
     return (<p>Loading...</p>);
   }
 
   return (
     <div className="App">
-      <NavBar loggedIn={userToken} />
+      <NavBar loggedIn={userToken} logout={logout} />
       <Routes
         companies={companies}
         jobs={jobs}
         register={register}
         login={login}
-        logout={logout}
         updateUser={updateUser}
         apply={apply}
         filter={filterCompanies}
+        clearFilter={clearFilter}
         applications={userCredentials.applications}
         loggedIn={userToken}
         userCredentials={userCredentials}
