@@ -16,7 +16,6 @@ const CompanySearchForm = ({ filter, clearFilter }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
     filter(formData);
   }
 
@@ -26,7 +25,7 @@ const CompanySearchForm = ({ filter, clearFilter }) => {
   }
 
   return (
-    <Form className="Form shadow">
+    <Form onSubmit={handleSubmit} className="Form shadow">
       <FormGroup>
         <Label for="search">Search Companies</Label>
         <Input
