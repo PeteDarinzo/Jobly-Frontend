@@ -30,6 +30,7 @@ function App() {
 
     async function getData() {
       let companiesRes = await JoblyApi.getAllCompanies();
+      console.log("Companies res: ", companiesRes.companies);
       let jobsRes = await JoblyApi.getAllJobs();
       setCompanies(companiesRes);
       setJobs(jobsRes);
