@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the home snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="Form shadow"
+  >
+    <div
+      class="mb-3"
+    >
+      <label
+        class="form-label"
+        for="search"
+      >
+        Search Companies
+      </label>
+      <input
+        class="form-control"
+        id="search"
+        name="search"
+        placeholder="Enter search term"
+        required=""
+        type="text"
+        value=""
+      />
+    </div>
+    <div>
+      <button
+        class="m-1 btn btn-primary"
+        type="button"
+      >
+        Filter Companies
+      </button>
+      <button
+        class="m-1 btn btn-secondary"
+        type="button"
+      >
+        Clear Filters
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;

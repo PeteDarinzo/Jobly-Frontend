@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders matches the router snapshot when logged in 1`] = `
+<DocumentFragment>
+  <div
+    class="Home shadow-lg"
+  >
+    <h1>
+      Welcome back, !
+    </h1>
+    <a
+      href="/jobs"
+    >
+      <button
+        class="m-3 btn btn-primary btn-lg"
+      >
+        View Jobs
+      </button>
+    </a>
+    <a
+      href="/companies"
+    >
+      <button
+        class="m-3 btn btn-primary btn-lg"
+      >
+        View Companies
+      </button>
+    </a>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`renders matches the router snapshot when logged out 1`] = `
+<DocumentFragment>
+  <div
+    class="Home shadow-lg"
+  >
+    <h1>
+      Welcome to Jobly!
+    </h1>
+    <h2
+      class="Home-left"
+    >
+      Your dream job...
+    </h2>
+    <a
+      href="/signup"
+    >
+      <button
+        class="m-3 btn btn-primary btn-lg"
+      >
+        Sign Up
+      </button>
+    </a>
+    <a
+      href="/login"
+    >
+      <button
+        class="m-3 btn btn-primary btn-lg"
+      >
+        Log in
+      </button>
+    </a>
+    <h2
+      class="Home-right"
+    >
+      ...just a click away.
+    </h2>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the home snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="Form shadow"
+  >
+    <h1>
+      Edit Profile
+    </h1>
+    <div
+      class="mb-3"
+    >
+      <label
+        class="form-label"
+        for="username"
+      >
+        Username
+      </label>
+      <p
+        id="username"
+      />
+    </div>
+    <div
+      class="mb-3"
+    >
+      <label
+        class="form-label"
+        for="firstName"
+      >
+        First Name
+      </label>
+      <input
+        class="form-control"
+        id="firstName"
+        name="firstName"
+        required=""
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="mb-3"
+    >
+      <label
+        class="form-label"
+        for="lastName"
+      >
+        Last Name
+      </label>
+      <input
+        class="form-control"
+        id="lastName"
+        name="lastName"
+        required=""
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="mb-3"
+    >
+      <label
+        class="form-label"
+        for="email"
+      >
+        Email
+      </label>
+      <input
+        class="form-control"
+        id="email"
+        name="email"
+        required=""
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      class="mb-3"
+    >
+      <label
+        class="form-label"
+        for="password"
+      >
+        Provide password to confirm changes
+      </label>
+      <input
+        class="form-control"
+        id="password"
+        name="password"
+        placeholder="password"
+        required=""
+        type="password"
+      />
+    </div>
+    <button
+      class="btn-lg btn btn-primary"
+    >
+      Submit
+    </button>
+  </form>
+</DocumentFragment>
+`;

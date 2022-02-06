@@ -4,7 +4,7 @@ import NavBar from './NavBar';
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import JoblyApi from "./Api.js";
 import jwt_decode from "jwt-decode";
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
 function App() {
@@ -154,7 +154,6 @@ function App() {
 
   async function apply(id) {
     await JoblyApi.apply(userCredentials.username, id);
-
     const credentials = await JoblyApi.getCredentials(userCredentials.username);
     setUserCredentials(credentials);
   }
@@ -182,7 +181,7 @@ function App() {
   /** During times of data retrieval, just render a loading message */
 
   if (isLoading) {
-    return (<p>Loading...</p>);
+    return (<p data-testid="loading">Loading...</p>);
   }
 
   return (

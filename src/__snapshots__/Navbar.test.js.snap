@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the navbar snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <nav
+      class="py-3 navbar"
+    >
+      <div
+        class="container-fluid"
+      >
+        <a
+          aria-current="page"
+          class="Nav-logo active"
+          href="/"
+        >
+          Jobly 
+          <i
+            class="fas fa-suitcase"
+          />
+        </a>
+        <ul
+          class="nav"
+        >
+          <li
+            class="nav-item"
+          >
+            <a
+              href="/companies"
+            >
+              Companies
+            </a>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <a
+              href="/jobs"
+            >
+              Jobs
+            </a>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <a
+              href="/profile"
+            >
+              Profile
+            </a>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <a
+              href="/login"
+            >
+              Log Out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches the navbar snapshot when logged out 1`] = `
+<DocumentFragment>
+  <div>
+    <nav
+      class="py-3 navbar"
+    >
+      <div
+        class="container-fluid"
+      >
+        <a
+          aria-current="page"
+          class="Nav-logo active"
+          href="/"
+        >
+          Jobly 
+          <i
+            class="fas fa-suitcase"
+          />
+        </a>
+        <ul
+          class="nav"
+        >
+          <li
+            class="nav-item"
+          >
+            <a
+              href="/login"
+            >
+              Login
+            </a>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <a
+              href="/signup"
+            >
+              Signup
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</DocumentFragment>
+`;

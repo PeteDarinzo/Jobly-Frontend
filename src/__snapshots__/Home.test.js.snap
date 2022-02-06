@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the home snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="Home shadow-lg"
+  >
+    <h1>
+      Welcome back, testuser!
+    </h1>
+    <a
+      href="/jobs"
+    >
+      <button
+        class="m-3 btn btn-primary btn-lg"
+      >
+        View Jobs
+      </button>
+    </a>
+    <a
+      href="/companies"
+    >
+      <button
+        class="m-3 btn btn-primary btn-lg"
+      >
+        View Companies
+      </button>
+    </a>
+  </div>
+</DocumentFragment>
+`;

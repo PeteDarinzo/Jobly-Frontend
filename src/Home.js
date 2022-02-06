@@ -9,7 +9,7 @@ import { Button } from "reactstrap"
 const Home = ({ username }) => {
   return (
     <div className="Home shadow-lg">
-      <h1>Welcome back,  {username}!</h1>
+      <h1>Welcome back, {username}!</h1>
       <Link to="/jobs">
         <Button color="primary" size="lg" className="m-3">
           View Jobs
