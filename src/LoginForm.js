@@ -45,7 +45,7 @@ const LoginForm = ({ login, error }) => {
           <Input
             type="password"
             name="password"
-            id="examplePassword"
+            id="password"
             placeholder="password"
             onChange={handleChange}
           />

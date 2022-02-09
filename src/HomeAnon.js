@@ -18,7 +18,7 @@ const HomeAnon = () => {
       </Link>
       <Link to="/login">
         <Button color="primary" size="lg" className="m-3">
-          Log in
+          Log In
         </Button>
       </Link>
       <h2 className="Home-right">...just a click away.</h2>

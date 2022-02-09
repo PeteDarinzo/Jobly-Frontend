@@ -28,7 +28,7 @@ exports[`matches the home snapshot 1`] = `
       <button
         class="m-3 btn btn-primary btn-lg"
       >
-        Log in
+        Log In
       </button>
     </a>
     <h2

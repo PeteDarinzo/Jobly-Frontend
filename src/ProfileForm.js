@@ -5,10 +5,10 @@ import "./Form.css"
 const ProfileForm = ({ updateUser, username, firstName, lastName, email, error }) => {
 
   const initialState = {
-    username: username,
-    firstName: firstName,
-    lastName: lastName,
-    email: email,
+    username,
+    firstName,
+    lastName,
+    email,
     password: ""
   }
 

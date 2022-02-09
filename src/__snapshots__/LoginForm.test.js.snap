@@ -37,7 +37,7 @@ exports[`matches the home snapshot 1`] = `
         </label>
         <input
           class="form-control"
-          id="examplePassword"
+          id="password"
           name="password"
           placeholder="password"
           type="password"

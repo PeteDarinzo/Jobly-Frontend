@@ -1,7 +1,7 @@
 import './App.css';
 import Routes from "./Routes"
 import NavBar from './NavBar';
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import JoblyApi from "./Api.js";
 import jwt_decode from "jwt-decode";
 import { useHistory } from 'react-router-dom';
@@ -38,6 +38,7 @@ function App() {
 
     getData();
 
+    console.log(isLoading);
     if (localStorage.getItem("joblyToken")) {
       const token = JSON.parse(localStorage.getItem("joblyToken"));
       JoblyApi.token = token; // set JoblyApi token for future requests
@@ -58,6 +59,7 @@ function App() {
       const decoded = jwt_decode(userToken);
       const username = decoded.username;
       const credentials = await JoblyApi.getCredentials(username);
+      console.log(credentials);
       setUserCredentials(credentials);
     }
 
@@ -66,6 +68,7 @@ function App() {
     setLoginError("");
     setSignupError("");
     setProfileError("");
+
   }, [userToken]);
 
   /** 
@@ -80,7 +83,8 @@ function App() {
 
     if (companies.length && jobs.length && (!userToken || Object.keys(userCredentials).length)) {
       setIsLoading(false);
-    };
+    }
+
   }, [companies, jobs, userCredentials]);
 
   /** 
