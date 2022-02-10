@@ -1,7 +1,7 @@
 import './App.css';
 import Routes from "./Routes"
 import NavBar from './NavBar';
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import JoblyApi from "./Api.js";
 import jwt_decode from "jwt-decode";
 import { useHistory } from 'react-router-dom';

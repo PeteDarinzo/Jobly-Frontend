@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import CompanyCard from "./CompanyCard";
 import { Link } from "react-router-dom";
 import "./CompanyList.css";

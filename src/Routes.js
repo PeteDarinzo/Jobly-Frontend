@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import Home from "./Home";
 import HomeAnon from "./HomeAnon";
