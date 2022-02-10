@@ -30,7 +30,6 @@ function App() {
 
     async function getData() {
       let companiesRes = await JoblyApi.getAllCompanies();
-      console.log("Companies res: ", companiesRes.companies);
       let jobsRes = await JoblyApi.getAllJobs();
       setCompanies(companiesRes);
       setJobs(jobsRes);
@@ -38,7 +37,6 @@ function App() {
 
     getData();
 
-    console.log(isLoading);
     if (localStorage.getItem("joblyToken")) {
       const token = JSON.parse(localStorage.getItem("joblyToken"));
       JoblyApi.token = token; // set JoblyApi token for future requests
@@ -59,7 +57,6 @@ function App() {
       const decoded = jwt_decode(userToken);
       const username = decoded.username;
       const credentials = await JoblyApi.getCredentials(username);
-      console.log(credentials);
       setUserCredentials(credentials);
     }
 
