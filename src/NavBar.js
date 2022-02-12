@@ -9,7 +9,7 @@ const NavBar = ({ loggedIn, logout }) => {
     <div>
       <Navbar className="py-3">
         <NavLink exact to="/" className="Nav-logo">
-          Jobly <i className="fas fa-suitcase"></i>
+          Jobly <span className="material-icons">work</span>
         </NavLink>
         {loggedIn && (
           <Nav>
